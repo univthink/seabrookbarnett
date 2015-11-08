@@ -116,14 +116,13 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
               <% @posts.each do |p| %>
-              <% @password = "Supercalifragilistic" %>
-
+            
 
               <div class="post-preview">
                   <h2 class="post-title"><%= link_to p.title, "posts" + "/#{p.id}" %></h2>
                         <h3 class="post-body" style="font-weight: normal;">
-                          <%= p.body %>
-                        </h3>
+                          <%=raw sanitize(simple_format(p.body), :tags => %w(br p) ) %>
+                        </h3>                        </h3>
 
                     <p class="post-meta">Posted <a href="#"><%= p.author_id %></a> on <%= p.created_at %></p>
 
