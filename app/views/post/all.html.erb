@@ -120,7 +120,7 @@
 
 
               <div class="post-preview">
-                  <h2 class="post-title"><%= link_to "#", "posts" + "/#{p.id}" %></h2>
+                  <h2 class="post-title"><%= link_to p.title, "posts" + "/#{p.id}" %></h2>
                         <h3 class="post-body" style="font-weight: normal;">
                           <%=raw sanitize(simple_format(p.body), :tags => %w(br p) ) %>
                         </h3>
