@@ -93,7 +93,7 @@
               <div class="n">
                   <h2 class="post-title"><%= @post1.title %></h2>
                         <h3 class="post-subtitle" style="font-weight: normal;">
-                          <%= @post1.body %>
+                          <%=raw sanitize(simple_format(@post1.body), :tags => %w(br p) ) %>
                         </h3>
                     </a>
 
