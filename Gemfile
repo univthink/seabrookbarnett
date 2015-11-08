@@ -36,7 +36,7 @@ group :development, :test do
   #gem 'byebug'
 end
 group :production do
-  gem 'pg', '~> 0.18.3'
+#  gem 'pg', '~> 0.18.3'
 end
 
 group :development do

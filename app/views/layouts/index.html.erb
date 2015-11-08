@@ -125,7 +125,7 @@
                         </h3>                        </h3>
 
                     <p class="post-meta">Posted <a href="#"><%= p.author_id %></a> on <%= p.created_at %></p>
-
+                    <p class="post-meta">This post has been viewed <a href="#"><%= p.views %></a> times.</p>
               </div>
               <% $secret_url = new_post_path + "/#{(p.id.to_s)}" + "/delete" %>
               <% $secret_url1 = new_post_path + "/#{(p.id.to_s)}" + "/edit" %>
@@ -191,11 +191,13 @@ Password: <input type="password" name="fname1">
     </footer>
 
     <!-- jQuery -->
-    <%= stylesheet_link_tag "jquery.js" %>
+    <%= javascript_include_tag "jquery.js" %>
     <!-- Bootstrap Core JavaScript -->
-<%= stylesheet_link_tag "bootstrap.min.js" %>
+
+  <%= javascript_include_tag "bootstrap.min.js" %>
     <!-- Custom Theme JavaScript -->
-<%= stylesheet_link_tag "clean-blog.min.js" %>
+
+  <%= javascript_include_tag "clean-blog.min.js" %>
 </body>
 
 </html>
