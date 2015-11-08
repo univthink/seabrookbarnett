@@ -9,6 +9,7 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     render template: "post/post"
+    @post.views = @post.views + 1
     @post.save
   end
 
@@ -50,6 +51,13 @@ class PostsController < ApplicationController
       render template: "post/new"
     end
     @post.save
+  end
+
+  def views
+    @post = Post.find(params[:id])
+    @post.views = @post.views + 1
+    @post.save
+    render template: "post/post"
   end
 
   def destroy
