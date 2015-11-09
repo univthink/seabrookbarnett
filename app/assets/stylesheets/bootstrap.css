@@ -9,6 +9,9 @@ html {
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
 }
+h3.post-subtitle {
+    font-weight: normal;
+}
 body {
   margin: 0;
 }

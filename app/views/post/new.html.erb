@@ -22,7 +22,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Clean Blog</title>
+    <title>Seabrook Barnett</title>
 
     <%= stylesheet_link_tag "bootstrap.min.css" %>
     <%= stylesheet_link_tag "bootstrap.css" %>
@@ -88,9 +88,9 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="site-heading">
-                        <h1>Clean Blog</h1>
+                        <h1>Seabrook (Ben) Barnett</h1>
                         <hr class="small">
-                        <span class="subheading">A Clean Blog Theme by Start Bootstrap</span>
+                        <span class="subheading">A Simple Blog Built on Bootstrap/Rails</span>
                     </div>
                 </div>
             </div>
@@ -114,6 +114,7 @@
                 <%= f.text_area :body, size: "60x12" %>
                 <% @posts = Post.all %>
                 <% @posts.each do |p| %>
+                <% p.author_id = 1 %>
                 <% $secret_url = new_post_path  %>
                 <% end %>
             <h6><form name="myForm" onsubmit="return validateForm()" action="<%= $secret_url %>" method="get">
@@ -172,14 +173,7 @@
         </div>
     </footer>
 
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="js/clean-blog.min.js"></script>
+    <%= javascript_include_tag "application.js" %>
 
 </body>
 

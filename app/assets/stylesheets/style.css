@@ -1,4 +1,4 @@
-div.header {//height: 80vh;
+div.header {
   width:100%; background: url('/assets/tech.jpg') no-repeat; background-size: cover; padding: 1 1 1 1; margin: 0 0 0 0; background-position: center center;}
 body, html {
   font-family: 'Montserrat';
@@ -7,6 +7,9 @@ body, html {
 body {
   margin: 0 0 0 0;
   padding: 0 0 0 0;
+}
+h3.post-subtitle {
+    font-weight: normal;
 }
 div.header-banner h2 {
     text-align: center;

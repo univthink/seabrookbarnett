@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Clean Blog</title>
+    <title>Seabrook Barnett</title>
 
     <%= stylesheet_link_tag "bootstrap.min.css" %>
     <%= stylesheet_link_tag "bootstrap.css" %>
@@ -75,9 +75,9 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="site-heading">
-                        <h1>Clean Blog</h1>
+                        <h1>Seabrook (Ben) Barnett</h1>
                         <hr class="small">
-                        <span class="subheading">A Clean Blog Theme by Start Bootstrap</span>
+                        <span class="subheading">A Simple Blog Built on Bootstrap/Rails</span>
                     </div>
                 </div>
             </div>
@@ -92,12 +92,14 @@
 
               <div class="n">
                   <h2 class="post-title"><%= @post1.title %></h2>
-                        <h3 class="post-subtitle">
-                          <%= @post1.body %>
+                        <h3 class="post-subtitle" style="font-weight: normal;">
+                          <%=raw sanitize(simple_format(@post1.body), :tags => %w(br p) ) %>
                         </h3>
                     </a>
 
-                    <p class="post-meta">Posted by <a href="#"><%= @post1.author_id %></a> on <%= @post1.created_at %></p>
+                    <p class="post-meta">Posted on <%= @post1.created_at %></p>
+                    <p class="post-meta">This post has been viewed <a href="#"><%= @post1.author_id %></a> times.</p>
+
               </div>
 
 
@@ -152,15 +154,7 @@
         </div>
     </footer>
 
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="js/clean-blog.min.js"></script>
-
+<%= javascript_include_tag "application.js" %>
 </body>
 
 </html>

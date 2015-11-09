@@ -9,12 +9,14 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     render template: "post/post"
+    @post.author_id = @post.author_id + 1
     @post.save
   end
 
   def new
     @posts = Post.all
     @post = Post.new
+    @post.author_id = 1
     render template: "post/new"
   end
 
@@ -23,6 +25,7 @@ class PostsController < ApplicationController
     @url3 = request.original_url
     if @url3.split('/')[-1] != "new?fname=BroccoliCasserole"
     @post = Post.new(post_params)
+    @post.author_id = 1
     @post.save
     render template: "post/all"
   else

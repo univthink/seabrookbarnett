@@ -122,10 +122,11 @@
               <div class="post-preview">
                   <h2 class="post-title"><%= link_to p.title, "posts" + "/#{p.id}" %></h2>
                         <h3 class="post-body" style="font-weight: normal;">
-                          <%= p.body %>
+                          <%=raw sanitize(simple_format(p.body), :tags => %w(br p) ) %>
                         </h3>
 
-                    <p class="post-meta">Posted <a href="#"><%= p.author_id %></a> on <%= p.created_at %></p>
+                        <p class="post-meta">Posted on <%= p.created_at %></p>
+                    <p class="post-meta">This post has been viewed <a href="#"><%= p.author_id %></a> times.</p>
 
               </div>
               <% $secret_url = new_post_path + "/#{(p.id.to_s)}" + "/delete" %>
@@ -190,15 +191,7 @@ Password: <input type="password" name="fname1">
             </div>
         </div>
     </footer>
-
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="js/clean-blog.min.js"></script>
+    <%= javascript_include_tag "application.js" %>
 
 </body>
 

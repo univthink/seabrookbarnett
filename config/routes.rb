@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
   get 'application' => 'welcome#application'
 
-  get 'post/(:id)' => 'posts#show', as: "single"
+  get 'post/(:id)' => 'posts#views', as: "single"
 
   #get 'posts/new' => 'posts#new', as: "new_post"
 
